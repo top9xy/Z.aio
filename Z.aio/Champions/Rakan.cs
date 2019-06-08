@@ -49,7 +49,11 @@ namespace Z.aio.Champions
 
                 if (target != null)
                 {
-                    Q.Cast(target);
+                    var pred = Q.GetPrediction(target);
+                    if (pred.Hitchance >= HitChance.High)
+                    {
+                        Q.Cast(pred.CastPosition, true);
+                    }
                 }
             }
             if (useW)
@@ -227,9 +231,11 @@ namespace Z.aio.Champions
                                         {
                                             if (target.IsValidTarget(W.Range))
                                             {
-
-
-                                                W.Cast(target);
+                                                var pred = W.GetPrediction(target);
+                                                if (pred.Hitchance >= HitChance.High)
+                                                {
+                                                    W.Cast(pred.CastPosition, true);
+                                                }
                                             }
                                         }
                                     }
@@ -365,9 +371,11 @@ namespace Z.aio.Champions
                                         {
                                             if (target.IsValidTarget(W.Range))
                                             {
-
-
-                                                W.Cast(target);
+                                                var pred = W.GetPrediction(target);
+                                                if (pred.Hitchance >= HitChance.High)
+                                                {
+                                                    W.Cast(pred.CastPosition, true);
+                                                }
                                             }
                                         }
                                         if (en.HasBuff("RakanEShield") && delayyyyyyyyy <= Variables.TickCount)
@@ -385,9 +393,11 @@ namespace Z.aio.Champions
 
                                         if (target.IsValidTarget(W.Range))
                                         {
-
-
-                                            W.Cast(target);
+                                            var pred = W.GetPrediction(target);
+                                            if (pred.Hitchance >= HitChance.High)
+                                            {
+                                                W.Cast(pred.CastPosition, true);
+                                            }
                                         }
                                         if (en.Distance(Player) < E.Range && delayyyyyyyyy <= Variables.TickCount)
                                         {
@@ -411,7 +421,11 @@ namespace Z.aio.Champions
 
                 if (target != null)
                 {
-                    Q.Cast(target);
+                    var pred = Q.GetPrediction(target);
+                    if (pred.Hitchance >= HitChance.High)
+                    {
+                        Q.Cast(pred.CastPosition, true);
+                    }
                 }
             }
 

@@ -56,12 +56,20 @@ namespace Z.aio.Champions
                             switch (RootMenu["combo"]["qmode"].GetValue<MenuList>().Index)
                             {
                                 case 0:
-                                    Q.Cast(target);
+                                    var pred = Q.GetPrediction(target);
+                                    if (pred.Hitchance >= HitChance.High)
+                                    {
+                                        Q.Cast(pred.CastPosition, true);
+                                    }
                                     break;
                                 case 1:
                                     if (target.HasBuff("brandablaze"))
                                     {
-                                        Q.Cast(target);
+                                        pred = Q.GetPrediction(target);
+                                        if (pred.Hitchance >= HitChance.High)
+                                        {
+                                            Q.Cast(pred.CastPosition, true);
+                                        }
                                     }
                                     break;
                             }
@@ -72,7 +80,11 @@ namespace Z.aio.Champions
 
                         if (target != null)
                         {
-                            W.Cast(target);
+                            var pred = W.GetPrediction(target);
+                            if (pred.Hitchance >= HitChance.High)
+                            {
+                                W.Cast(pred.CastPosition, true);
+                            }
                         }
                     }
                     break;
@@ -90,7 +102,11 @@ namespace Z.aio.Champions
 
                         if (target != null)
                         {
-                            W.Cast(target);
+                            var pred = W.GetPrediction(target);
+                            if (pred.Hitchance >= HitChance.High)
+                            {
+                                W.Cast(pred.CastPosition, true);
+                            }
                         }
                     }
                     if (target.IsValidTarget(Q.Range) && useQ)
@@ -101,12 +117,20 @@ namespace Z.aio.Champions
                             switch (RootMenu["combo"]["qmode"].GetValue<MenuList>().Index)
                             {
                                 case 0:
-                                    Q.Cast(target);
+                                    var pred = Q.GetPrediction(target);
+                                    if (pred.Hitchance >= HitChance.High)
+                                    {
+                                        Q.Cast(pred.CastPosition, true);
+                                    }
                                     break;
                                 case 1:
                                     if (target.HasBuff("brandablaze"))
                                     {
-                                        Q.Cast(target);
+                                        pred = Q.GetPrediction(target);
+                                        if (pred.Hitchance >= HitChance.High)
+                                        {
+                                            Q.Cast(pred.CastPosition, true);
+                                        }
                                     }
                                     break;
                             }
@@ -120,7 +144,11 @@ namespace Z.aio.Champions
 
                         if (target != null)
                         {
-                            W.Cast(target);
+                            var pred = W.GetPrediction(target);
+                            if (pred.Hitchance >= HitChance.High)
+                            {
+                                W.Cast(pred.CastPosition, true);
+                            }
                         }
                     }
                     if (target.IsValidTarget(E.Range) && useE)
@@ -140,12 +168,20 @@ namespace Z.aio.Champions
                             switch (RootMenu["combo"]["qmode"].GetValue<MenuList>().Index)
                             {
                                 case 0:
-                                    Q.Cast(target);
+                                    var pred = Q.GetPrediction(target);
+                                    if (pred.Hitchance >= HitChance.High)
+                                    {
+                                        Q.Cast(pred.CastPosition, true);
+                                    }
                                     break;
                                 case 1:
                                     if (target.HasBuff("brandablaze"))
                                     {
-                                        Q.Cast(target);
+                                        pred = Q.GetPrediction(target);
+                                        if (pred.Hitchance >= HitChance.High)
+                                        {
+                                            Q.Cast(pred.CastPosition, true);
+                                        }
                                     }
                                     break;
                             }
@@ -158,7 +194,11 @@ namespace Z.aio.Champions
                     {
                         if (target != null)
                         {
-                            W.Cast(target);
+                            var pred = W.GetPrediction(target);
+                            if (pred.Hitchance >= HitChance.High)
+                            {
+                                W.Cast(pred.CastPosition, true);
+                            }
                         }
                     }
 
@@ -170,12 +210,20 @@ namespace Z.aio.Champions
                             switch (RootMenu["combo"]["qmode"].GetValue<MenuList>().Index)
                             {
                                 case 0:
-                                    Q.Cast(target);
+                                    var pred = Q.GetPrediction(target);
+                                    if (pred.Hitchance >= HitChance.High)
+                                    {
+                                        Q.Cast(pred.CastPosition, true);
+                                    }
                                     break;
                                 case 1:
                                     if (target.HasBuff("brandablaze"))
                                     {
-                                        Q.Cast(target);
+                                         pred = Q.GetPrediction(target);
+                                        if (pred.Hitchance >= HitChance.High)
+                                        {
+                                            Q.Cast(pred.CastPosition, true);
+                                        }
                                     }
                                     break;
                             }
@@ -395,12 +443,20 @@ namespace Z.aio.Champions
                                 switch (RootMenu["harass"]["qmode"].GetValue<MenuList>().Index)
                                 {
                                     case 0:
-                                        Q.Cast(target);
+                                        var pred = Q.GetPrediction(target);
+                                        if (pred.Hitchance >= HitChance.High)
+                                        {
+                                            Q.Cast(pred.CastPosition, true);
+                                        }
                                         break;
                                     case 1:
                                         if (target.HasBuff("brandablaze"))
                                         {
-                                            Q.Cast(target);
+                                            pred = Q.GetPrediction(target);
+                                            if (pred.Hitchance >= HitChance.High)
+                                            {
+                                                Q.Cast(pred.CastPosition, true);
+                                            }
                                         }
                                         break;
                                 }
@@ -440,12 +496,20 @@ namespace Z.aio.Champions
                                 switch (RootMenu["harass"]["qmode"].GetValue<MenuList>().Index)
                                 {
                                     case 0:
-                                        Q.Cast(target);
+                                        var pred = Q.GetPrediction(target);
+                                        if (pred.Hitchance >= HitChance.High)
+                                        {
+                                            Q.Cast(pred.CastPosition, true);
+                                        }
                                         break;
                                     case 1:
                                         if (target.HasBuff("brandablaze"))
                                         {
-                                            Q.Cast(target);
+                                            pred = Q.GetPrediction(target);
+                                            if (pred.Hitchance >= HitChance.High)
+                                            {
+                                                Q.Cast(pred.CastPosition, true);
+                                            }
                                         }
                                         break;
                                 }
@@ -479,12 +543,20 @@ namespace Z.aio.Champions
                                 switch (RootMenu["harass"]["qmode"].GetValue<MenuList>().Index)
                                 {
                                     case 0:
-                                        Q.Cast(target);
+                                        var pred = Q.GetPrediction(target);
+                                        if (pred.Hitchance >= HitChance.High)
+                                        {
+                                            Q.Cast(pred.CastPosition, true);
+                                        }
                                         break;
                                     case 1:
                                         if (target.HasBuff("brandablaze"))
                                         {
-                                            Q.Cast(target);
+                                            pred = Q.GetPrediction(target);
+                                            if (pred.Hitchance >= HitChance.High)
+                                            {
+                                                Q.Cast(pred.CastPosition, true);
+                                            }
                                         }
                                         break;
                                 }
@@ -510,12 +582,20 @@ namespace Z.aio.Champions
                                 switch (RootMenu["harass"]["qmode"].GetValue<MenuList>().Index)
                                 {
                                     case 0:
-                                        Q.Cast(target);
+                                        var pred = Q.GetPrediction(target);
+                                        if (pred.Hitchance >= HitChance.High)
+                                        {
+                                            Q.Cast(pred.CastPosition, true);
+                                        }
                                         break;
                                     case 1:
                                         if (target.HasBuff("brandablaze"))
                                         {
-                                            Q.Cast(target);
+                                            pred = Q.GetPrediction(target);
+                                            if (pred.Hitchance >= HitChance.High)
+                                            {
+                                                Q.Cast(pred.CastPosition, true);
+                                            }
                                         }
                                         break;
                                 }

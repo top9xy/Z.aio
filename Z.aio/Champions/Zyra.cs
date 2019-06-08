@@ -70,10 +70,13 @@ namespace Z.aio.Champions
                         if (target != null)
                         {
 
+                                var pred = W.GetPrediction(target);
+                                if (pred.Hitchance >= HitChance.High)
+                                {
+                                    W.Cast(pred.CastPosition, true);
+                                }
 
-                            W.Cast(target);
-
-                        }
+                            }
                     }
 
                     if (target.IsValidTarget(Q.Range) && useQ)
@@ -81,13 +84,21 @@ namespace Z.aio.Champions
 
                         if (target != null)
                         {
-                            if (Q.Cast(target))
-                            {
-                                if (target.IsValidTarget(W.Range) && useW)
+                                var pred = Q.GetPrediction(target);
+                                if (pred.Hitchance >= HitChance.High)
                                 {
-                                    W.Cast(target);
-                                }
-                            }
+                                    if (Q.Cast(pred.CastPosition, true))
+                                    {
+                                        if (target.IsValidTarget(W.Range) && useW)
+                                        {
+                                            pred = W.GetPrediction(target);
+                                            if (pred.Hitchance >= HitChance.High)
+                                            {
+                                                W.Cast(pred.CastPosition, true);
+                                            }
+                                        }
+                                    }
+                                }                                                                                  
                         }
                     }
                     if (target.IsValidTarget(R.Range) && target != null && useR)

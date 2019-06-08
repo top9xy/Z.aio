@@ -48,7 +48,11 @@ namespace Z.aio.Champions
 
                 if (target != null)
                 {
-                    E.Cast(target);
+                    var pred = E.GetPrediction(target);
+                    if (pred.Hitchance >= HitChance.High)
+                    {
+                        E.Cast(pred.CastPosition, true);
+                    }
                 }
             }
             if (target.IsValidTarget(300) && useQ)
@@ -93,7 +97,11 @@ namespace Z.aio.Champions
                         target.CountEnemyHeroesInRange(300) >= RootMenu["combo"]["hitr"].GetValue<MenuSlider>().Value &&
                         target.IsValidTarget(R.Range))
                     {
-                        R.Cast(target);
+                        var pred = R.GetPrediction(target);
+                        if (pred.Hitchance >= HitChance.High)
+                        {
+                            R.Cast(pred.CastPosition, true);
+                        }
                     }
                 }
                 if (RootMenu["combo"]["hitr"].GetValue<MenuSlider>().Value == 1)
@@ -102,7 +110,11 @@ namespace Z.aio.Champions
 
                         target.IsValidTarget(R.Range))
                     {
-                        R.Cast(target);
+                        var pred = R.GetPrediction(target);
+                        if (pred.Hitchance >= HitChance.High)
+                        {
+                            R.Cast(pred.CastPosition, true);
+                        }
                     }
                 }
 
@@ -126,7 +138,11 @@ namespace Z.aio.Champions
                 if (target != null &&
                     target.IsValidTarget(R.Range))
                 {
-                    R.Cast(target);
+                    var pred = R.GetPrediction(target);
+                    if (pred.Hitchance >= HitChance.High)
+                    {
+                        R.Cast(pred.CastPosition, true);
+                    }
                 }
             }
         }
@@ -177,7 +193,11 @@ namespace Z.aio.Champions
 
                 if (target != null)
                 {
-                    E.Cast(target);
+                    var pred = E.GetPrediction(target);
+                    if (pred.Hitchance >= HitChance.High)
+                    {
+                        E.Cast(pred.CastPosition, true);
+                    }
                 }
             }
             if (target.IsValidTarget(1000) && useQ)

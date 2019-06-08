@@ -71,7 +71,11 @@ namespace Z.aio.Champions
 
                 if (target != null)
                 {
-                    Q.Cast(target);
+                    var pred = Q.GetPrediction(target);
+                    if (pred.Hitchance >= HitChance.High)
+                    {
+                        Q.Cast(pred.CastPosition, true);
+                    }
                 }
             }
             if (useW && target.IsValidTarget(Q.Range) && !Q.IsReady() && Player.Mana >= Q.Mana+W.Mana)
@@ -79,7 +83,11 @@ namespace Z.aio.Champions
                 if (target != null)
                 {
                     W.Cast();
-                    Q.Cast(target);
+                    var pred = Q.GetPrediction(target);
+                    if (pred.Hitchance >= HitChance.High)
+                    {
+                        Q.Cast(pred.CastPosition, true);
+                    }
                 }
             }
 
@@ -238,7 +246,11 @@ namespace Z.aio.Champions
 
                     if (target != null)
                     {
-                        Q.Cast(target);
+                        var pred = Q.GetPrediction(target);
+                        if (pred.Hitchance >= HitChance.High)
+                        {
+                            Q.Cast(pred.CastPosition, true);
+                        }
                     }
                 }
                 if (useW && target.IsValidTarget(Q.Range))
@@ -246,7 +258,11 @@ namespace Z.aio.Champions
                     if (target != null && !Q.IsReady() && Player.Mana >= Q.Mana + W.Mana)
                     {
                         W.Cast();
-                        Q.Cast(target);
+                        var pred = Q.GetPrediction(target);
+                        if (pred.Hitchance >= HitChance.High)
+                        {
+                            Q.Cast(pred.CastPosition, true);
+                        }
                     }
                 }
             }

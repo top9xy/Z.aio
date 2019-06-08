@@ -137,11 +137,12 @@ namespace Z.aio.Champions
                                 if (pix.IsValidTarget(1800, true) && pix != null && pix.Distance(Player) < 1800 &&
                                     pix.HasBuff("lulufaerieattackaid") && pix.Distance(enemyInBounceRange) < Q.Range)
                                 {
-
-
                                     Q.From = pix.Position;
-                                    Q.Cast(enemyInBounceRange);
-
+                                    var pred = Q.GetPrediction(enemyInBounceRange);
+                                    if (pred.Hitchance >= HitChance.High)
+                                    {
+                                        Q.Cast(pred.CastPosition, true);
+                                    }
                                 }
                             }
                         }
@@ -157,7 +158,11 @@ namespace Z.aio.Champions
                                 {
 
                                     Q.From = pix.Position;
-                                    Q.Cast(enemyInBounceRange);
+                                    var pred = Q.GetPrediction(enemyInBounceRange);
+                                    if (pred.Hitchance >= HitChance.High)
+                                    {
+                                        Q.Cast(pred.CastPosition, true);
+                                    }
 
                                 }
                             }
@@ -176,7 +181,11 @@ namespace Z.aio.Champions
 
 
                                     Q.From = pix.Position;
-                                    Q.Cast(enemyInBounceRange);
+                                    var pred = Q.GetPrediction(enemyInBounceRange);
+                                    if (pred.Hitchance >= HitChance.High)
+                                    {
+                                        Q.Cast(pred.CastPosition, true);
+                                    }
 
                                 }
                             }
@@ -272,12 +281,20 @@ namespace Z.aio.Champions
                                 if (pixs.Distance(target) < Player.Distance(target))
                                 {
                                     Q.From = pixs.Position;
-                                    Q.Cast(target);
+                                    var pred = Q.GetPrediction(target);
+                                    if (pred.Hitchance >= HitChance.High)
+                                    {
+                                        Q.Cast(pred.CastPosition, true);
+                                    }
                                 }
                                 if (pixs.Distance(target) > Player.Distance(target))
                                 {
                                     Q.From = Player.Position;
-                                    Q.Cast(target);
+                                    var pred = Q.GetPrediction(target);
+                                    if (pred.Hitchance >= HitChance.High)
+                                    {
+                                        Q.Cast(pred.CastPosition, true);
+                                    }
                                 }
                             }
                         }
@@ -410,12 +427,20 @@ namespace Z.aio.Champions
                             if (pixs.Distance(bestTarget) < Player.Distance(bestTarget))
                             {
                                 Q.From = pixs.Position;
-                                Q.Cast(bestTarget);
+                                var pred = Q.GetPrediction(bestTarget);
+                                if (pred.Hitchance >= HitChance.High)
+                                {
+                                    Q.Cast(pred.CastPosition, true);
+                                }
                             }
                             if (pixs.Distance(bestTarget) > Player.Distance(bestTarget))
                             {
                                 Q.From = Player.Position;
-                                Q.Cast(bestTarget);
+                                var pred = Q.GetPrediction(bestTarget);
+                                if (pred.Hitchance >= HitChance.High)
+                                {
+                                    Q.Cast(pred.CastPosition, true);
+                                }
                             }
                         }
                     }
@@ -470,7 +495,11 @@ namespace Z.aio.Champions
                                     pix.HasBuff("lulufaerieattackaid") && pix.Distance(bestTarget) < Q.Range)
                                 {
                                     Q.From = pix.Position;
-                                    Q.Cast(bestTarget);
+                                    var pred = Q.GetPrediction(bestTarget);
+                                    if (pred.Hitchance >= HitChance.High)
+                                    {
+                                        Q.Cast(pred.CastPosition, true);
+                                    }
                                 }
                             }
                             foreach (var pix in GameObjects.EnemyHeroes)
@@ -479,7 +508,11 @@ namespace Z.aio.Champions
                                     pix.HasBuff("lulufaerieburn") && pix.Distance(bestTarget) < Q.Range)
                                 {
                                     Q.From = pix.Position;
-                                    Q.Cast(bestTarget);
+                                    var pred = Q.GetPrediction(bestTarget);
+                                    if (pred.Hitchance >= HitChance.High)
+                                    {
+                                        Q.Cast(pred.CastPosition, true);
+                                    }
                                 }
                             }
                             foreach (var pix in GameObjects.EnemyMinions)
@@ -490,7 +523,11 @@ namespace Z.aio.Champions
                                 {
 
                                     Q.From = pix.Position;
-                                    Q.Cast(bestTarget);
+                                    var pred = Q.GetPrediction(bestTarget);
+                                    if (pred.Hitchance >= HitChance.High)
+                                    {
+                                        Q.Cast(pred.CastPosition, true);
+                                    }
                                 }
                             }
                         }
@@ -588,7 +625,11 @@ namespace Z.aio.Champions
 
 
                                     Q.From = pix.Position;
-                                    Q.Cast(enemyInBounceRange);
+                                    var pred = Q.GetPrediction(enemyInBounceRange);
+                                    if (pred.Hitchance >= HitChance.High)
+                                    {
+                                        Q.Cast(pred.CastPosition, true);
+                                    }
 
                                 }
                             }
@@ -605,7 +646,11 @@ namespace Z.aio.Champions
                                 {
 
                                     Q.From = pix.Position;
-                                    Q.Cast(enemyInBounceRange);
+                                    var pred = Q.GetPrediction(enemyInBounceRange);
+                                    if (pred.Hitchance >= HitChance.High)
+                                    {
+                                        Q.Cast(pred.CastPosition, true);
+                                    }
 
                                 }
                             }
@@ -624,7 +669,11 @@ namespace Z.aio.Champions
 
 
                                     Q.From = pix.Position;
-                                    Q.Cast(enemyInBounceRange);
+                                    var pred = Q.GetPrediction(enemyInBounceRange);
+                                    if (pred.Hitchance >= HitChance.High)
+                                    {
+                                        Q.Cast(pred.CastPosition, true);
+                                    }
 
                                 }
                             }
@@ -664,12 +713,20 @@ namespace Z.aio.Champions
                                 if (pixs.Distance(target) < Player.Distance(target))
                                 {
                                     Q.From = pixs.Position;
-                                    Q.Cast(target);
+                                    var pred = Q.GetPrediction(target);
+                                    if (pred.Hitchance >= HitChance.High)
+                                    {
+                                        Q.Cast(pred.CastPosition, true);
+                                    }
                                 }
                                 if (pixs.Distance(target) > Player.Distance(target))
                                 {
                                     Q.From = Player.Position;
-                                    Q.Cast(target);
+                                    var pred = Q.GetPrediction(target);
+                                    if (pred.Hitchance >= HitChance.High)
+                                    {
+                                        Q.Cast(pred.CastPosition, true);
+                                    }
                                 }
                             }
                         }

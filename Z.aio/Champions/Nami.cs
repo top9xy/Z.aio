@@ -74,7 +74,11 @@ namespace Z.aio.Champions
 
                 if (target != null)
                 {
-                    Q.Cast(target);
+                    var pred = Q.GetPrediction(target);
+                    if (pred.Hitchance >= HitChance.High)
+                    {
+                        Q.Cast(pred.CastPosition, true);
+                    }
                 }
             }
 
@@ -162,7 +166,11 @@ namespace Z.aio.Champions
                           t.HasBuffOfType(BuffType.Suppression)) && t.IsValidTarget(Q.Range)))
                 {
 
-                    Q.Cast(target);
+                    var pred = Q.GetPrediction(target);
+                    if (pred.Hitchance >= HitChance.High)
+                    {
+                        Q.Cast(pred.CastPosition, true);
+                    }
                 }
 
             }
